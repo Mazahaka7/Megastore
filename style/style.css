@@ -547,6 +547,9 @@ form{
     .department__menu .accessories ul{
         background-image: url(../images/nike_bag.webp);
     }
+    .department__menu .sale ul{
+        background-image: url(../images/Nike-Logo.png);
+    }
 }   
 
 
