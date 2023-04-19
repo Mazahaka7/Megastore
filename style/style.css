@@ -162,6 +162,11 @@ h4 {
     display: flex;
     align-items: center;
 }
+.flex-center2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .flex-column{
     display: flex;
     flex-direction: column;
@@ -172,14 +177,6 @@ h4 {
 }
 .mobile-hide{
     display: none;
-}
-.products__cover img{
-    position: absolute;
-    top: 10px;
-    right: 0;
-    display: block;
-    object-fit: cover;
-    height: 100%;
 }
 .products {
     flex-shrink: 0;
@@ -208,7 +205,7 @@ h4 {
     background-color: var(--dark-color);
     color: var(--primary-white-color);
 }
-.department__links {
+.departments__links {
     display: block;
     padding-right: 10px;
 }
@@ -219,6 +216,7 @@ h4 {
 .header__wrapper{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     font-weight: 300;
     font-size: 0.8em;
@@ -258,10 +256,6 @@ h4 {
     display: flex;
     justify-content: space-between;
 }
-/* .nav__left, .nav__right{
-    display: flex;
-    align-items: center;
-} */
 .nav__list{
     line-height: 100px;
     gap: 2em;
@@ -317,8 +311,8 @@ h4 {
 }
 .nav__right .fly-item {
     position: absolute;
-    top: -9px;
-    left: 9px;
+    top: 9px;
+    left: 10px;
     height: 10px;
     width: 10px;
     text-align: center;
@@ -337,37 +331,37 @@ h4 {
     z-index: 1;
 }
 
-/* Header main - Department */
+/* Header main - Departments */
 .header-main{
     background-color: var(--secondary-color);
     padding: 1.5em 0;
     margin-bottom: 2em;
 }
-.department{
+.departments{
     position: relative;
     z-index: 10;
 }
-.department__head{
+.departments__head{
     position: inherit;
-    width: 270px;
+    width: 328px;
     padding: 0.75em 1.5em;
     background-color: var(--red--bg-color);
     color: var(--primary-white-color);
     border-radius: 8px 8px 0 0;
     margin-bottom: -1.6em;
 }
-.department__trigger{
+.departments__trigger{
     position: absolute;
     top: 0;
-    right: -40px;
+    right: 5px;
     width: 60px;
     height: 60px;
     padding: 1.3em;
 }
-.department__mini-text{
+.departments__mini-text{
     font-size: .6em;
 }
-.department__links{
+.departments__links{
     font-size: .8em;
 }
 
@@ -417,6 +411,66 @@ form{
     background-color: var(--light-dark-color);
 }
 
+ /* Header canvas */
+.site-off{
+    position: fixed;
+    width: 320px;
+    height: 100%;
+    background-color: var(--base-color);
+    overflow-y: auto;
+    z-index: 1000;
+}
+.canvas{
+    width: 100%;
+    height: 100%;
+    touch-action: auto;
+    padding: 1.5em;
+}
+.canvas__head{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1.5em;
+    margin: -1.5em -1.5em 1.5em;
+    background-color: var(--secondary-color);
+    border-bottom-right-radius: 160px 50px;
+}
+.canvas__head .logo{
+    z-index: 10;
+    position: relative;
+}
+.canvas__head .logo .circle{
+    left: 1px;
+}
+.t-close{
+    font-size:1.2em;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    transition: all .3s;
+}
+.t-close:hover{
+    color: var(--primary-color);
+    background-color: var(--base-color);
+}
+.canvas .departments__head{
+    font-size: .7em;
+    text-align: center;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 7px 7px 0 0;
+    background-color: var(--base-color);
+}
+.canvas .top-nav > ul, .canvas .mobile-nav > ul{
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: .6em;
+    line-height: 36px;
+    padding-top: 1.2em;
+    border-top: 2px solid var(--light-dark-color);
+}
 
 
 
@@ -436,7 +490,7 @@ form{
     }
     .header__nav{
         padding: 0;
-        margin: 0;
+        margin: 1em 0 0 0;
         border: none;
     }
     .nav__right li:not(:first-of-type){
@@ -459,7 +513,7 @@ form{
 
         display: none;
     }
-    nav .childbearing:hover .dropdown-menu{
+    .childbearing:hover .dropdown-menu{
         display: block;
     }
     .dropdown-menu .wrapper{
@@ -474,17 +528,24 @@ form{
     }
     .dropdown-menu .products{
         position: relative;
-        flex: 2;
         padding: 0;
         align-items: center;
     }
     .products .media{
         height: 400px;
     }
+    .products__cover img{
+        position: absolute;
+        top: 10px;
+        right: 0;
+        display: block;
+        object-fit: cover;
+        height: 100%;
+    }
     .products__text{
         position: absolute;
         bottom: 50px;
-        left: 25px;
+        right: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -499,7 +560,7 @@ form{
         max-width: 600px;
         margin-left: auto;
     }
-    .department__menu{
+    .departments__menu{
         position: absolute;
         top: 100%;
         width: 328px;
@@ -508,18 +569,18 @@ form{
         border-top: none;
         border-bottom: none;
     }
-    .department__links{
+    .departments__links{
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid var(--light-dark-color);
         padding: .6em;
     }
-    .department__menu .childbearing > ul{
+    .departments__menu .childbearing > ul{
         position: absolute;
         top: 0;
         left: 100%;
-        width: 50%;
-        height: auto;
+        width: 63%;
+        height: 100%;
         min-height: 85.7%;
         padding: 1.5em;
         border: 1px solid var(--light-dark-color);
@@ -529,27 +590,32 @@ form{
         display: none;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center
     }
+    .departments__menu .sale ul{
+            background-size: contain;
+        }
     
     /* show submenu */
-    .department .childbearing:hover ul{
+    .departments .childbearing:hover ul{
         display: block;
     }
-    .department__menu .shop-all ul{
+    .departments__menu .shop-all ul{
         background-image: url(../images/sportman.webp);
     }
-    .department__menu .men-style ul{
+    .departments__menu .men-style ul{
         background-image: url(../images/nike-sportman.webp);
     }
-    .department__menu .women-style ul{
+    .departments__menu .women-style ul{
         background-image: url(../images/nike_sportwoman.webp);
     }
-    .department__menu .accessories ul{
+    .departments__menu .accessories ul{
         background-image: url(../images/nike_bag.webp);
     }
-    .department__menu .sale ul{
-        background-image: url(../images/Nike-Logo.png);
+    .departments__menu .sale ul{
+        background-image: url(../images/sale.webp);
     }
+
 }   
 
 
