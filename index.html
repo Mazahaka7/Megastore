@@ -10,7 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Rubik:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
     <link rel="stylesheet" href="./style/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
@@ -26,12 +29,13 @@
             <div class="logo">
               <a href=""><span class="circle"></span>.MegaStore</a>
             </div>
-            <a href="#" class="t-close flex-center2"><i class="ri-close-line"></i></a>
+            <a href="#" class="t-close flex-center2"
+              ><i class="ri-close-line"></i
+            ></a>
           </div>
           <div class="canvas__departments"></div>
           <nav class="mobile-nav"></nav>
           <div class="top-nav"></div>
-          
         </div>
       </aside>
       <header>
@@ -42,7 +46,9 @@
               <div class="header__left">
                 <ul class="header__list flex-center main-links">
                   <li class="header__item"><a href="#">Blog</a></li>
-                  <li class="header__item"><a href="#">Featured Products</a></li>
+                  <li class="header__item">
+                    <a href="#">Featured Products</a>
+                  </li>
                   <li class="header__item"><a href="#">Wishlist</a></li>
                 </ul>
               </div>
@@ -52,21 +58,25 @@
                   <li class="header__item"><a href="#">My Account</a></li>
                   <li class="header__item"><a href="#">Order Tracking</a></li>
                   <li class="header__item">
-                    <a href="#">USD</a>
-                    <span><i class="ri-arrow-down-s-line"></i></span>
+                    <a href="#" class="mobile-hide">USD</a>
+                    <span
+                      ><i class="ri-arrow-down-s-line mobile-hide"></i
+                    ></span>
                     <ul class="currency">
-                      <li class="current">USD</li>
-                      <li>EUR</li>
-                      <li>UAH</li>
+                      <li class="current"><a href="#">USD</a></li>
+                      <li><a href="#">EUR</a></li>
+                      <li><a href="#">UAH</a></li>
                     </ul>
                   </li>
                   <li class="header__item">
-                    <a href="#">English</a>
-                    <span><i class="ri-arrow-down-s-line"></i></span>
+                    <a href="#" class="mobile-hide">English</a>
+                    <span
+                      ><i class="ri-arrow-down-s-line mobile-hide"></i
+                    ></span>
                     <ul class="language">
-                      <li class="current">English</li>
-                      <li>German</li>
-                      <li>Ukraininan</li>
+                      <li class="current"><a href="#">English</a></li>
+                      <li><a href="#">German</a></li>
+                      <li><a href="#">Ukraininan</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -94,67 +104,8 @@
                       <a href="#">Shop</a>
                     </li>
                     <li class="childbearing">
-                      <a href="#" class="childbearing__item">Men
-                        <div class="icon">
-                          <i class="ri-arrow-down-s-line"></i>
-                        </div>
-                        <div class="dropdown-menu">
-                        <div class="container">
-                          <div class="wrapper">
-                            <div class="flex-column items">
-                              <h4>All Shoes</h4>
-                              <ul>
-                                <li><a href="#"></a>Jordan</li>
-                                <li><a href="#"></a>AirMax</li>
-                                <li><a href="#"></a>Running</li>
-                                <li><a href="#"></a>Training</li>
-                                <li><a href="#"></a>Lifestyle</li>
-                              </ul>
-                            </div>
-                            <div class="flex-column items">
-                              <h4>All sportwear</h4>
-                              <ul>
-                                <li><a href="#"></a>Soccer</li>
-                                <li><a href="#"></a>Tennis</li>
-                                <li><a href="#"></a>Backetball</li>
-                                <li><a href="#"></a>Running</li>
-                                <li><a href="#"></a>Training</li>
-                              </ul>
-                            </div>
-                            <div class="flex-column items">
-                              <h4>Accessories</h4>
-                              <ul>
-                                <li><a href="#"></a>Sun glasses</li>
-                                <li><a href="#"></a>Water Bottles</li>
-                                <li><a href="#"></a>Bags</li>
-                              </ul>
-                            </div>
-                            <div class="flex-column items">
-                              <h4>New arrivals</h4>
-                              <ul>
-                                <li><a href="#"></a>Shop All</li>
-                              </ul>
-                            </div>
-                            <div class="flex-column products">
-                              <div class="media">
-                                <div class="thumbnail products__cover">
-                                  <a href="">
-                                    <img src="./images/sportman2.jpg" alt="" />
-                                  </a>
-                                </div>
-                                <div class="products__text">
-                                  <h4>NEW!!!</h4>
-                                  <a href="#" class="primary-btn">Order Now</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="childbearing">
-                      <a href="#" class="childbearing__item">Women
+                      <a href="#" class="childbearing__item"
+                        >Men
                         <div class="icon">
                           <i class="ri-arrow-down-s-line"></i>
                         </div>
@@ -199,12 +150,83 @@
                                 <div class="media">
                                   <div class="thumbnail products__cover">
                                     <a href="">
-                                      <img src="./images/sportwoman.jpg" alt="" />
+                                      <img
+                                        src="./images/sportman2.jpg"
+                                        alt=""
+                                      />
                                     </a>
                                   </div>
                                   <div class="products__text">
                                     <h4>NEW!!!</h4>
-                                    <a href="#" class="primary-btn">Order Now</a>
+                                    <a href="#" class="primary-btn"
+                                      >Order Now</a
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="childbearing">
+                      <a href="#" class="childbearing__item"
+                        >Women
+                        <div class="icon">
+                          <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                        <div class="dropdown-menu">
+                          <div class="container">
+                            <div class="wrapper">
+                              <div class="flex-column items">
+                                <h4>All Shoes</h4>
+                                <ul>
+                                  <li><a href="#"></a>Jordan</li>
+                                  <li><a href="#"></a>AirMax</li>
+                                  <li><a href="#"></a>Running</li>
+                                  <li><a href="#"></a>Training</li>
+                                  <li><a href="#"></a>Lifestyle</li>
+                                </ul>
+                              </div>
+                              <div class="flex-column items">
+                                <h4>All sportwear</h4>
+                                <ul>
+                                  <li><a href="#"></a>Soccer</li>
+                                  <li><a href="#"></a>Tennis</li>
+                                  <li><a href="#"></a>Backetball</li>
+                                  <li><a href="#"></a>Running</li>
+                                  <li><a href="#"></a>Training</li>
+                                </ul>
+                              </div>
+                              <div class="flex-column items">
+                                <h4>Accessories</h4>
+                                <ul>
+                                  <li><a href="#"></a>Sun glasses</li>
+                                  <li><a href="#"></a>Water Bottles</li>
+                                  <li><a href="#"></a>Bags</li>
+                                </ul>
+                              </div>
+                              <div class="flex-column items">
+                                <h4>New arrivals</h4>
+                                <ul>
+                                  <li><a href="#"></a>Shop All</li>
+                                </ul>
+                              </div>
+                              <div class="flex-column products">
+                                <div class="media">
+                                  <div class="thumbnail products__cover">
+                                    <a href="">
+                                      <img
+                                        src="./images/sportwoman.jpg"
+                                        alt=""
+                                      />
+                                    </a>
+                                  </div>
+                                  <div class="products__text">
+                                    <h4>NEW!!!</h4>
+                                    <a href="#" class="primary-btn"
+                                      >Order Now</a
+                                    >
                                   </div>
                                 </div>
                               </div>
@@ -393,7 +415,9 @@
               <div class="header-main__right">
                 <div class="search-box">
                   <form action="" class="search">
-                    <span class="icon-large"><i class="ri-search-line"></i></span>
+                    <span class="icon-large"
+                      ><i class="ri-search-line"></i
+                    ></span>
                     <input type="search" placeholder="Search for products" />
                     <button type="submit">Search</button>
                   </form>
