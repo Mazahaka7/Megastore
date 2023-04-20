@@ -367,7 +367,11 @@ h4 {
 .departments__links{
     font-size: .8em;
 }
-
+/* li underline instead of links temporary */
+.departments .childbearing li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 
 /* Header search form */
@@ -466,7 +470,42 @@ form{
     border-radius: 7px 7px 0 0;
     background-color: var(--base-color);
 }
-.canvas .childbearing > .dropdown-menu{
+.canvas .departments__links{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    line-height: 30px;
+}
+.canvas__departments .childbearing{
+    margin: .5em 0;
+}
+.canvas .childbearing {
+    width: 100%;
+}
+.canvas .childbearing > ul{
+    font-size: 1em;
+    padding-left: 3em;
+
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.canvas .childbearing > ul {
+    font-weight: 300;
+    font-size: .6em;
+    line-height: 28px;
+    padding-left: 3em;
+
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.canvas .childbearing> .dropdown-menu {
+    font-weight: 300;
+    font-size: .6em;
+    line-height: 28px;
     padding-left: 3em;
 
     height: auto;
@@ -490,7 +529,7 @@ form{
     line-height: initial;
     padding: .5em;
 }
-.canvas .ri-arrow-right-s-fill{
+.canvas .arrow i{
     transform: rotate(90deg);
 }
 .canvas .top-nav ul{
@@ -526,6 +565,11 @@ form{
 }
 .canvas .childbearing .icon{
     padding: 0;
+}
+.header__nav .cart-list{
+    flex-direction: column-reverse;
+    gap: 1em;
+    margin-left: -0.5em;
 }
 
 
@@ -587,10 +631,10 @@ form{
         padding: 0;
         align-items: center;
     }
-    .products .media{
+    .dropdown-menu .products .media{
         height: 400px;
     }
-    .products__cover img{
+    .dropdown-menu .products__cover img{
         position: absolute;
         top: 10px;
         right: 0;
@@ -598,7 +642,7 @@ form{
         object-fit: cover;
         height: 100%;
     }
-    .products__text{
+    .dropdown-menu .products__text{
         position: absolute;
         bottom: 50px;
         right: 50px;

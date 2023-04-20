@@ -18,3 +18,16 @@ function CopyMenu () {
 CopyMenu();
 
 // Mobile submenu
+const submenu = document.querySelectorAll(".canvas__departments .childbearing .arrow");
+submenu.forEach((menu) => menu.addEventListener("click", toggle));
+
+function toggle(e) {
+    console.log(this.parentElement.nextElementSibling);
+    e.preventDefault();
+    const menu = document.querySelectorAll(".canvas__departments .childbearing");
+    menu.forEach(element => element.classList.remove("expand"));
+    // if (!this.closest("childbearing").classlist.contains("expand")) {
+    //     this.closest('childbearing').classList.toggle("expand");
+    // } 
+    
+}
