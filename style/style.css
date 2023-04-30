@@ -644,6 +644,7 @@ form{
 /* Block Product - Top */
 .sectop{
     justify-content: space-between;
+    margin-top: 1em;
     margin-bottom: .5em;
     padding-bottom: 2em;
     border-bottom: 1px solid var(--light-dark-color);
@@ -656,7 +657,7 @@ form{
 }
 .sectop h2 .circle{
     top: -10px;
-    left: -10px;
+    left: -14px;
 }
 .products .item .offer{
     text-align: center;
@@ -702,7 +703,7 @@ form{
 }
 .products .image img:hover,
 .products .thumbnail img:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .products .item__media{
     position: relative;
@@ -792,6 +793,7 @@ form{
     display: flex;
     justify-content: center;
     margin-bottom: 2em;
+
 }
 .products.mini .item__content{
     display: flex;
@@ -803,8 +805,10 @@ form{
     order: -1;
 }
 .products.mini .item__media{
-    width: 150px;
     margin-right: 1.3em;
+}
+.products.mini .item__content{
+    max-width: 200px;
 }
 .stock .mini-text{
     font-weight: 400;
@@ -818,7 +822,7 @@ form{
     padding-bottom: 2em;
 }
 .products.main .item__media{
-    max-height: 455px;
+    max-height: 470px;
     margin-bottom: 2em;
 }
 .sectop{
@@ -893,6 +897,17 @@ form{
     background-color: #fff;
  }
 
+ .watch .item .thumbnail{
+    width: 330px;
+ }
+
+ /* Cart image fly */
+.flyimage.ibg{
+    opacity: 1;
+    position: fixed;
+    z-index: 100;
+    transform: all 1s ease 0s;
+}
 
 /* Responsive styles */
 @media screen and (min-width:320px) and (max-width:481px){

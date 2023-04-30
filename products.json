@@ -1,0 +1,149 @@
+{
+    "products":[
+
+    {
+        "id": 4,
+        "url": "#",
+        "title": "LeBron Witness 6",
+        "style": "backetball",
+        "image": "Lebron_witness.webp",
+        "price": 105,
+        "stock": 650,
+        "sold": 1350,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+    {
+        "id": 5,
+        "url": "#",
+        "title": "Zoom Freak 3" ,
+        "style": "backetball",
+        "image": "Zoom_freak.webp",
+        "price": 120,
+        "stock": 550,
+        "sold": 1450,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+    {
+        "id": 6,
+        "url": "#",
+        "title": "Air Jordan XXXVII",
+        "style": "backetball",
+        "image": "Jordan_XXXVII.webp" ,
+        "price": 175,
+        "stock": 450,
+        "sold": 1550,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+    {
+        "id": 7,
+        "url": "#",
+        "title": "Nike Tiempo Legend 9 Pro",
+        "style": "soccer",
+        "image": "nike_soccer.webp",
+        "price": 190,
+        "stock": 900,
+        "sold": 1100,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+    {
+        "id": 8,
+        "url": "#",
+        "title": "Nike Phantom GT2" ,
+        "style": "soccer",
+        "image": "nike_soccer2.webp",
+        "price": 200,
+        "stock": 550,
+        "sold": 1450,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+    {
+        "id": 9,
+        "url": "#",
+        "title": "ANike Zoom Mercurial Vapor 15",
+        "style": "soccer",
+        "image": "nike_soccer3.webp" ,
+        "price": 250,
+        "stock": 1000,
+        "sold": 1000,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+    {
+        "id": 11,
+        "url": "#",
+        "title": "Men's Nike Brown",
+        "style": "casual",
+        "image": "nike_cap_brown.webp",
+        "price": 18.99,
+        "stock": 1500,
+        "sold": 500,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+    {
+        "id": 12,
+        "url": "#",
+        "title": "Men's Nike Blue " ,
+        "style": "casual",
+        "image": "nike_cap_blue.webp",
+        "price": 21,
+        "stock": 1500,
+        "sold": 500,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+    {
+        "id": 13,
+        "url": "#",
+        "title": "Nike Military",
+        "style": "casual",
+        "image": "nike_cap_military.webp" ,
+        "price": 20,
+        "stock": 1000,
+        "sold": 1000,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+        {
+        "id": 14,
+        "url": "#",
+        "title": "Woman's Puma Dodgers Violet",
+        "style": "casual",
+        "image": "female_cap.webp",
+        "price": 18.99,
+        "stock": 1500,
+        "sold": 500,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+    {
+        "id": 15,
+        "url": "#",
+        "title": "Woman's Puma Cat Rose Dust " ,
+        "style": "casual",
+        "image": "female_cap2.webp",
+        "price": 21,
+        "stock": 1500,
+        "sold": 500,
+        "likeUrl": "",
+        "shareUrl": ""
+    },
+    {
+        "id": 16,
+        "url": "#",
+        "title": "JORDAN CLC99 CAP METAL",
+        "style": "casual",
+        "image": "nike_cap_jordan.webp" ,
+        "price": 250,
+        "stock": 1000,
+        "sold": 1000,
+        "likeUrl": "",
+        "shareUrl": ""
+    }
+    ]
+}
