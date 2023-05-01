@@ -72,14 +72,15 @@ window.onload = function () {
 }
 
 function docActions(e) {
-  console.log(e.target);
   const targetElement = e.target;
-  if (targetElement.classList.contains("view-all")) {
+  if (targetElement.classList.contains("allproducts__view-all")) {
     getProducts(targetElement);
     e.preventDefault();
   };
   if (targetElement.classList.contains("buy")) {
+    console.log(targetElement);
     const productId = targetElement.closest(".item").dataset.pid;
+    console.log(productId);
     addToCart(targetElement, productId);
     e.preventDefault();
   }
@@ -122,20 +123,21 @@ function loadProducts(data) {
                   <div class="item__media">
                     <div class="thumbnail">
                       <a href="#${productUrl}">
-                        <img src="./images/${productImage}" alt="" />
+                        <img class="item__img" src="./images/${productImage}" alt="" />
                       </a>
                     </div>
                     <div class="hoverable">
                       <ul>
-                        <li class="active">
-                          <a href=""><i class="ri-heart-line"></i></a>
-                        </li>
-                        <li>
-                          <a href=""><i class="ri-eye-fill"></i></a>
-                        </li>
-                        <li>
-                          <a class="buy" href=""><i class="ri-shopping-cart-2-fill"></i></a>
-                        </li>
+                          <li class="active">
+                            <a class="like" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="share" href="#"></a>
+                          </li>
+                          <li>
+                            <a class="buy" href="#"></a>
+                          </li>
+                        </ul>
                       </ul>
                     </div>
                   </div>
@@ -174,9 +176,9 @@ function addToCart(productButton, productId) {
     productButton.classList.add("hold");
     productButton.classList.add("fly");
   }
-  const cart = document.querySelector(".iscart");
+  const cart = document.querySelector(".iscart .icon-large");
   const product = document.querySelector(`[data-pid="${productId}"]`);
-  const productImage = document.querySelector(".item__img");
+  const productImage = product.querySelector(".item__img");
 
   const productImageClone = productImage.cloneNode(true);
 
@@ -187,10 +189,22 @@ function addToCart(productButton, productId) {
 
   productImageClone.setAttribute('class', 'flyimage ibg');
   productImageClone.style.cssText = `
+  width: ${productImageCloneWidth}px;
+  height: ${productImageCloneHeight}px;
   left:${productImageCloneLeft} px;
   top: ${productImageCloneTop}px;
-  width: ${productImageCloneWidth};
-  height: ${productImageCloneHeight};
   `;
-  document.body.append(productImageClone);
+  document.body.appendChild(productImageClone);
+
+  // const cartFlyLeft = cart.getBoundingClientRect().left;
+  // const cartFlyTop = cart.getBoundingClientRect().top;
+
+  // productImageClone.style.cssText =
+  //   `
+  //   left:${cartFlyLeft}px;
+  //   top:${cartFlyTop}px;
+  //   width = 0px;
+  //   height = 0px;
+  //   opacity = 0;
+  //   `
 }
