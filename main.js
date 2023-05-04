@@ -191,20 +191,62 @@ function addToCart(productButton, productId) {
   productImageClone.style.cssText = `
   width: ${productImageCloneWidth}px;
   height: ${productImageCloneHeight}px;
-  left:${productImageCloneLeft} px;
+  left:${productImageCloneLeft}px;
   top: ${productImageCloneTop}px;
   `;
   document.body.appendChild(productImageClone);
 
-  // const cartFlyLeft = cart.getBoundingClientRect().left;
-  // const cartFlyTop = cart.getBoundingClientRect().top;
+  const cartFlyLeft = cart.getBoundingClientRect().left;
+  const cartFlyTop = cart.getBoundingClientRect().top;
 
-  // productImageClone.style.cssText =
-  //   `
-  //   left:${cartFlyLeft}px;
-  //   top:${cartFlyTop}px;
-  //   width = 0px;
-  //   height = 0px;
-  //   opacity = 0;
-  //   `
+  productImageClone.style.cssText =
+    `
+    left:${cartFlyLeft}px;
+    top:${cartFlyTop}px;
+    width = 0px;
+    height = 0px;
+    opacity = 0;
+    `;
+  
+  productImageClone.addEventListener('transitionend', function () {
+    if (productButton.classList.contains('fly')) {
+      productImageClone.remove();
+      updateCart(productButton, productId);
+      productButton.classList.remove("fly");
+    }
+  })
+}
+function updateCart(productButton, productId, productAdd = true) {
+  const cart = document.querySelector(".iscart"),
+    cartIcon = cart.querySelector(".fly-item"),
+    cartQuantity = cart.querySelector(".item-quantity"),
+    cartProduct = document.querySelector(`[data-cart-pid="${productId}"]`),
+    cartList = document.querySelector(".cart-list");
+  
+  if (productAdd) {
+    if (cartQuantity) {
+      cartQuantity.innerHTML = ++cartQuantity.innerHTML;
+    } else {
+      cartIcon.insertAdjacentHTML('beforeend', `<span class='item-quantity'>1</span>`);
+    }
+    if (!cartProduct) {
+      const product = document.querySelector(`[data-cart-pid="${productId}"]`),
+        cartProductTitle = product.querySelector(".main-links").innerHTML,
+        cartProductImage = product.querySelector(".item__img").innerHTML,
+        cartProductContent = `
+          <div class="cart-list__image">${cartProductImage}</div>  
+          <div class='cart-list__body'>
+            <a class='cart-list__title'>${cartProductTitle}</a>
+            <div class="cart-list__quantity">Quantity: <span>1</span></div>
+            <a class='cart-list__delBtn>Delete</a>
+          </div>
+        `;
+      cartList.insertAdjacentHTML('beforeend', `<li data-cart-pid="${productId}"  class='cart-list__item'>${cartProductContent}</li>`);
+    } else {
+      const cartProductQuantity = cartProduct.querySelector('.cart-list__quantity span');
+      cartProductQuantity.innerHTML = ++cartProductQuantity.innerHTML;
+    }
+    productButton.classList.remove('hold')
+  }
+
 }
