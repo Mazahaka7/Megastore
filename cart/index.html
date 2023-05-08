@@ -14,7 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="../style/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -102,7 +102,7 @@
                 <nav class="mobile-hide destop-nav">
                   <ul class="nav__list flex-center second-links">
                     <li>
-                      <a href="./index.html">Home</a>
+                      <a href="../index.html">Home</a>
                     </li>
                     <li>
                       <a href="#">Shop</a>
@@ -155,7 +155,7 @@
                                   <div class="thumbnail products__cover">
                                     <a href="">
                                       <img
-                                        src="./images/sportman2.jpg"
+                                        src="../images/sportman2.jpg"
                                         alt=""
                                       />
                                     </a>
@@ -221,7 +221,7 @@
                                   <div class="thumbnail products__cover">
                                     <a href="">
                                       <img
-                                        src="./images/sportwoman.jpg"
+                                        src="../images/sportwoman.jpg"
                                         alt=""
                                       />
                                     </a>
@@ -243,7 +243,7 @@
                 </nav>
               </div>
               <div class="nav__right .flex-center">
-                <ul class="cart-list">
+                <ul class="cart-list second-links">
                   <li class="mobile-hide">
                     <a href="#">
                       <div class="icon-large">
@@ -255,7 +255,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="iscart">
+                    <a href="./cart/index.html" class="iscart">
                       <div class="iscart__icon icon-large">
                         <i class="ri-shopping-cart-2-line"></i>
                         <div class="fly-item">
@@ -268,7 +268,7 @@
                   <li>
                     <div class="icon-text">
                       <div class="mini-text">Total</div>
-                      <div class="total-amount">$<span>0.00</span></div>
+                      <div class="total-amount">$0.00</div>
                     </div>
                   </li>
                 </ul>
@@ -291,7 +291,7 @@
                       <i class="ri-menu-3-line ri-xl"></i>
                     </a>
                   </div>
-                  <div class="departments__menu">
+                  <div class="departments__menu hide">
                     <ul class="second-links">
                       <li class="childbearing shop-all">
                         <a href="#" class="departments__links">
@@ -428,554 +428,17 @@
         </div>
       </header>
       <main>
-        <!-- Slider -->
-        <section class="slider">
-          <div class="container">
-            <div class="wrapper">
-              <div class="myslider swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide slide">
-                    <div class="slide__item">
-                      <div class="slide__img">
-                        <img src="./images/Nike-Wallpaper.jpg" alt="" />
-                      </div>
-                      <div class="slide__text-content flex-column">
-                        <h4 class="slide__subheading">New Shoes</h4>
-                        <h2 class="slide__heading">Come & Get It!</h2>
-                        <a href="#" class="primary-btn">Shop Now</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide slide">
-                    <div class="slide__item">
-                      <div class="slide__img">
-                        <img src="./images/Sportglasses.jpg" alt="" />
-                      </div>
-                      <div class="slide__text-content flex-column">
-                        <h4 class="slide__subheading">Sunglasses</h4>
-                        <h2 class="slide__heading">50% Off</h2>
-                        <a href="#" class="primary-btn">Shop Now</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide slide">
-                    <div class="slide__item">
-                      <div class="slide__img">
-                        <img src="./images/sport_watch3.jpg" alt="" />
-                      </div>
-                      <div class="slide__text-content flex-column">
-                        <h4 class="slide__subheading">What time is now?</h4>
-                        <h2 class="slide__heading white">You'll love it!</h2>
-                        <a href="#" class="primary-btn">Shop Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Brands section -->
-        <section class="brands">
-          <div class="container">
-            <div class="wrapper flexwrap flex-center">
-              <div class="brands__item">
-                <a href="#" onclick="return false"
-                  ><img class="brands__img" src="./images/nike_blue.png" alt=""
-                /></a>
-              </div>
-              <div class="brands__item">
-                <a href="#" onclick="return false"
-                  ><img class="brands__img" src="./images/reebok.png" alt=""
-                /></a>
-              </div>
-              <div class="brands__item">
-                <a href="#" onclick="return false"
-                  ><img class="brands__img" src="./images/asics.png" alt=""
-                /></a>
-              </div>
-              <div class="brands__item">
-                <a href="#" onclick="return false"
-                  ><img class="brands__img" src="./images/puma.png" alt=""
-                /></a>
-              </div>
-              <div class="brands__item">
-                <a href="#" onclick="return false"
-                  ><img class="brands__img" src="./images/adidas.png" alt=""
-                /></a>
-              </div>
-              <div class="brands__item">
-                <a href="#" onclick="return false"
-                  ><img class="brands__img" src="./images/u-amour.png" alt=""
-                /></a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Section Top -->
-        <section class="trending">
-          <div class="container">
-            <div class="wrapper">
-              <div class="sectop">
-                <h2>
-                  <span class="circle"></span>
-                  Top Products
-                </h2>
-              </div>
-              <div class="flexwrap">
-                <div class="products big">
-                  <article data-pid="23" class="item">
-                    <div class="offer">
-                      <p class="offer__heading">Offer ends at</p>
-                      <ul class="offer__list flex-center2">
-                        <li>1</li>
-                        <li>22</li>
-                        <li>33</li>
-                        <li>11</li>
-                      </ul>
-                    </div>
-                    <div class="item__media">
-                      <div class="item__img">
-                        <img src="./images/nike_bg.webp" alt="" />
-                      </div>
-                      <div class="hoverable">
-                        <ul>
-                          <li class="active">
-                            <a class="like" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="share" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="buy action-btn" href="#"></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item__content">
-                      <div class="rating">
-                        <div class="stars"></div>
-                        <span class="mini-text">(2,500) </span>
-                      </div>
-                      <a class="main-links" href="#">
-                        <h3>The best! Nike Air Max 90</h3>
-                      </a>
-                      <div class="price">
-                        <span class="current">$59.99</span>
-                        <span class="normal mini-text">$109.00</span>
-                      </div>
-                      <div class="stock mini-text">
-                        <div class="quantity">
-                          <span
-                            >Stock:
-                            <span class="quantity-available">222</span>
-                          </span>
-                          <span
-                            >Sold:
-                            <span class="quantity-sold">1,788</span>
-                          </span>
-                        </div>
-                        <div class="bar">
-                          <div class="available"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="products mini">
-                  <article data-pid="16" class="item">
-                    <div class="item__media">
-                      <div class="item__img">
-                        <img src="./images/nike_cap_jordan.webp" alt="" />
-                      </div>
-                      <div class="hoverable">
-                        <ul>
-                          <li class="active">
-                            <a class="like" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="share" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="buy action-btn" href="#"></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item__content">
-                      <div class="rating">
-                        <div class="stars"></div>
-                        <span class="mini-text">(1000) </span>
-                      </div>
-                      <a class="main-links" href="#">
-                        <h3>Cap Jordan Yellow</h3>
-                      </a>
-                      <div class="price">
-                        <span class="current">$20.99</span>
-                        <span class="normal mini-text">$35.00</span>
-                      </div>
-                      <div class="stock mini-text">
-                        <p>1500 sold</p>
-                        <p>Free Shipping</p>
-                      </div>
-                    </div>
-                  </article>
-                  <article data-pid="14" class="item">
-                    <div class="item__media">
-                      <div class="item__img">
-                        <img src="./images/female_cap.webp" alt="" />
-                      </div>
-                      <div class="hoverable">
-                        <ul>
-                          <li class="active">
-                            <a class="like" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="share" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="buy action-btn" href="#"></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item__content">
-                      <div class="rating">
-                        <div class="stars"></div>
-                        <span class="mini-text">(1000) </span>
-                      </div>
-                      <a class="main-links" href="#">
-                        <h3>Woman's cap Puma Dodgers</h3>
-                      </a>
-                      <div class="price">
-                        <span class="current">$18.99</span>
-                        <span class="normal mini-text">$27.00</span>
-                      </div>
-                      <div class="stock mini-text">
-                        <p>500 sold</p>
-                        <p>Free Shipping</p>
-                      </div>
-                    </div>
-                  </article>
-                  <article data-pid="13" class="item">
-                    <div class="item__media">
-                      <div class="item__img">
-                        <img src="./images/nike_cap_military.webp" alt="" />
-                      </div>
-                      <div class="hoverable">
-                        <ul>
-                          <li class="active">
-                            <a class="like" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="share" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="buy action-btn" href="#"></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item__content">
-                      <div class="rating">
-                        <div class="stars"></div>
-                        <span class="mini-text">(1000) </span>
-                      </div>
-                      <a class="main-links" href="#">
-                        <h3>Military cap Nike</h3>
-                      </a>
-                      <div class="price">
-                        <span class="current">$19.99</span>
-                        <span class="normal mini-text">$30.00</span>
-                      </div>
-                      <div class="stock mini-text">
-                        <p>1000 sold</p>
-                        <p>Free Shipping</p>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="products mini">
-                  <article data-pid="20" class="item">
-                    <div class="item__media">
-                      <div class="item__img">
-                        <img src="./images/nike_jordan_air2.webp" alt="" />
-                      </div>
-                      <div class="hoverable">
-                        <ul>
-                          <li class="active">
-                            <a class="like" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="share" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="buy action-btn" href="#"></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item__content">
-                      <div class="rating">
-                        <div class="stars"></div>
-                        <span class="mini-text">(1,999) </span>
-                      </div>
-                      <a class="main-links" href="#">
-                        <h3>Men's Jordan Air1 Retro</h3>
-                      </a>
-                      <div class="price">
-                        <span class="current">$69.99</span>
-                        <span class="normal mini-text">$139.00</span>
-                      </div>
-                      <div class="stock mini-text">
-                        <p>2200 sold</p>
-                        <p>Free Shipping</p>
-                      </div>
-                    </div>
-                  </article>
-                  <article data-pid="21" class="item">
-                    <div class="item__media">
-                      <div class="item__img">
-                        <img src="./images/nike_woman_sneaker.webp" alt="" />
-                      </div>
-                      <div class="hoverable">
-                        <ul>
-                          <li class="active">
-                            <a class="like" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="share" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="buy action-btn" href="#"></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item__content">
-                      <div class="rating">
-                        <div class="stars"></div>
-                        <span class="mini-text">(1,999) </span>
-                      </div>
-                      <a class="main-links" href="#">
-                        <h3>Woman's Nike Revolution 6 White</h3>
-                      </a>
-                      <div class="price">
-                        <span class="current">$49.99</span>
-                        <span class="normal mini-text">$99.00</span>
-                      </div>
-                      <div class="stock mini-text">
-                        <p>2000 sold</p>
-                        <p>Free Shipping</p>
-                      </div>
-                    </div>
-                  </article>
-                  <article data-pid="22" class="item">
-                    <div class="item__media">
-                      <div class="item__img">
-                        <img src="./images/nike_zoom.webp" alt="" />
-                      </div>
-                      <div class="hoverable">
-                        <ul>
-                          <li class="active">
-                            <a class="like" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="share" href="#"></a>
-                          </li>
-                          <li>
-                            <a class="buy action-btn" href="#"></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item__content">
-                      <div class="rating">
-                        <div class="stars"></div>
-                        <span class="mini-text">(1,999) </span>
-                      </div>
-                      <a class="main-links" href="#">
-                        <h3>Men's Nike Air Zoom Black</h3>
-                      </a>
-                      <div class="price">
-                        <span class="current">$59.99</span>
-                        <span class="normal mini-text">$109.00</span>
-                      </div>
-                      <div class="stock mini-text">
-                        <p>2000 sold</p>
-                        <p>Free Shipping</p>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- All Products -->
-        <section class="allproducts">
-          <div class="container">
-            <div class="wrapper">
-              <div class="sectop">
-                <h2>
-                  <span class="circle"></span>
-                  All products
-                </h2>
-                <div class="second-links">
-                  <a href="#" class="allproducts__view-all"
-                    >View all
-                    <i class="ri-arrow-right-line"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="products main flexwrap">
-                <article data-pid="1" class="item">
-                  <div class="item__media">
-                    <div class="item__img">
-                      <img src="./images/nike_air_max2.webp" alt="" />
-                    </div>
-                    <div class="hoverable">
-                      <ul>
-                        <li class="active">
-                          <a class="like" href="#"></a>
-                        </li>
-                        <li>
-                          <a class="share" href="#"></a>
-                        </li>
-                        <li>
-                          <a class="buy action-btn" href="#"></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item__content">
-                    <div class="rating">
-                      <div class="stars"></div>
-                      <span class="mini-text">(2,500) </span>
-                    </div>
-                    <a class="main-links" href="#">
-                      <h3>Nike Air Max Exceen</h3>
-                    </a>
-                    <div class="price">
-                      <span class="current">$100.00</span>
-                    </div>
-                    <div class="stock mini-text">
-                      <div class="quantity">
-                        <!-- Change qty to smth real -->
-                        <span
-                          >Stock:
-                          <span class="quantity-available">222</span>
-                        </span>
-                        <span
-                          >Sold:
-                          <span class="quantity-sold">1,788</span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <article data-pid="2" class="item">
-                  <div class="item__media">
-                    <div class="item__img">
-                      <img src="./images/Nike_air_max_pulse.webp" alt="" />
-                    </div>
-                    <div class="hoverable">
-                      <ul>
-                        <li class="active">
-                          <a class="like" href="#"></a>
-                        </li>
-                        <li>
-                          <a class="share" href="#"></a>
-                        </li>
-                        <li>
-                          <a class="buy action-btn" href="#"></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item__content">
-                    <div class="rating">
-                      <div class="stars"></div>
-                      <span class="mini-text">(2,500) </span>
-                    </div>
-                    <a class="main-links" href="#">
-                      <h3>Nike Air Max Pulse</h3>
-                    </a>
-                    <div class="price">
-                      <span class="current">$150.00</span>
-                    </div>
-                    <div class="stock mini-text">
-                      <div class="quantity">
-                        <!-- Change qty to smth real -->
-                        <span
-                          >Stock:
-                          <span class="quantity-available">222</span>
-                        </span>
-                        <span
-                          >Sold:
-                          <span class="quantity-sold">1,788</span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <article data-pid="3" class="item">
-                  <div class="item__media">
-                    <div class="item__img">
-                      <img src="./images/nike_alpha2.webp" alt="" />
-                    </div>
-                    <div class="hoverable">
-                      <ul>
-                        <li class="active">
-                          <a class="like" href="#"></a>
-                        </li>
-                        <li>
-                          <a class="share" href="#"></a>
-                        </li>
-                        <li>
-                          <a class="buy action-btn" href="#"></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item__content">
-                    <div class="rating">
-                      <div class="stars"></div>
-                      <span class="mini-text">(2,500) </span>
-                    </div>
-                    <a class="main-links" href="#">
-                      <h3>Nike Air Max Alpha Trainer</h3>
-                    </a>
-                    <div class="price">
-                      <span class="current">$110.00</span>
-                    </div>
-                    <div class="stock mini-text">
-                      <div class="quantity">
-                        <span
-                          >Stock:
-                          <span class="quantity-available">288</span>
-                        </span>
-                        <span
-                          >Sold:
-                          <span class="quantity-sold">1,588</span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
         <!-- Banner section -->
         <section class="banners">
           <div class="products-categories flexwrap">
             <div class="category-wrapper">
               <div class="item">
                 <div class="item__media">
-                  <img class="item__img" src="./images/sportwear.jpeg" alt="" />
+                  <img
+                    class="item__img"
+                    src="../images/sportwear.jpeg"
+                    alt=""
+                  />
                 </div>
                 <div class="item__content mini-links">
                   <h4>Your style</h4>
@@ -1010,7 +473,7 @@
                 <div class="item__media">
                   <img
                     class="item__img"
-                    src="./images/sportgadjets2.webp"
+                    src="../images/sportgadjets2.webp"
                     alt=""
                   />
                 </div>
@@ -1045,7 +508,7 @@
             <div class="category-wrapper">
               <div class="item">
                 <div class="item__media">
-                  <img class="item__img" src="./images/sportpit.jpeg" alt="" />
+                  <img class="item__img" src="../images/sportpit.jpeg" alt="" />
                 </div>
                 <div class="item__content mini-links">
                   <h4>Energize yourself</h4>
@@ -1187,7 +650,6 @@
         </div>
       </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="./main.js"></script>
+    <script src="../main.js"></script>
   </body>
 </html>
