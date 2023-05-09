@@ -91,13 +91,12 @@ function docActions(e) {
     document.querySelector(".cart-list__products").classList.remove("active");
   };
   if (targetElement.classList.contains("cart-list__delBtn")) {
-    targetElement.classList.add("active_btn");
+    targetElement.classList.add("action-btn");
     const productId = targetElement.closest(".cart-list__item").dataset.cartPid;
     const productButton = targetElement;
     updateCart(productButton, productId, false);
     e.preventDefault();
   }
-
 }
 
 async function getProducts(button) {
@@ -135,10 +134,8 @@ function loadProducts(data) {
 
     let template = `<article data-pid="${productId}" class="item">
                   <div class="item__media">
-                    <div class="thumbnail">
-                      <a href="#${productUrl}">
-                        <img class="item__img" src="./images/${productImage}" alt="" />
-                      </a>
+                    <div class="item__img">
+                        <img src="./images/${productImage}" alt="" />
                     </div>
                     <div class="hoverable">
                       <ul>
@@ -160,9 +157,9 @@ function loadProducts(data) {
                       <div class="stars"></div>
                       <span class="mini-text">(2,500) </span>
                     </div>
-                    <h3 class="main-links">
-                      <a href="#">${productTitle}</a>
-                    </h3>
+                      <a href="#" class="main-links">
+                        <h3>${productTitle}</h3>
+                      </a>
                     <div class="price">
                       <span class="current">$${productPrice}</span>
                     </div>
@@ -253,8 +250,8 @@ function updateCart(productButton, productId, productAdd = true) {
           <div class="cart-list__image">${cartProductImage}</div>  
           <div class='cart-list__body'>
             <a class='cart-list__title'>${cartProductTitle}</a>
-            <div class="cart-list__quantity">Quantity: <span>1</span></div>
             <div class="cart-list__price">Price: <span>${cartProductPrice}</span></div>
+            <div class="cart-list__quantity">Quantity: <span>1</span></div>
             <a class="cart-list__delBtn">Delete</a>
           </div>
         `;
@@ -283,27 +280,23 @@ function updateCart(productButton, productId, productAdd = true) {
 }
 
 //Cart show price
-const buyButtons = document.querySelectorAll(".buy");
-buyButtons.forEach((btn) => btn.addEventListener("click", function () {
   // const item = this.closest('.item'),
   // element = item.querySelector('.current'),
   // itemPrice = element.innerHTML.slice(1);
   // const totalSum = document.querySelector(".total-amount span");
   // totalSum.innerHTML += itemPrice;
-  let totalPrice = 0;
-  const cart = document.querySelector(".cart-list__products").children;
-  console.log(cart);
-  for (i = 0; i < cart.length; i++){
-    let itemPrice = cart[i].children;
-    console.log(itemPrice);
-  }
+  
   // cart.forEach((element) => function () {
   //   const price = element.find('.price').textContent;
   //   totalPrice += parseFloat(price);
   // })
 
-
-  // for (let i = 0; i < cart.length; i++) {
-  //   totalPrice += cart[i].price;
-  // }
-}));
+  // const buyButtons = document.querySelectorAll(".buy");
+  // buyButtons.forEach((btn) => btn.addEventListener("click", function () {
+  // const cart = document.querySelector(".cart-list__products").children;
+  // console.log(cart);
+  // // for (i = 0; i < cart.length; i++){
+  // //   let itemPrice = cart[i].children;
+  // //   console.log(itemPrice);
+  // // }
+  // }));

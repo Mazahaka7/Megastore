@@ -945,7 +945,6 @@ form{
 }
 .cart-list__image{
     flex: 0 0 100px;
-    height: 100px;
 }
 .cart-list__body{
     flex: 1 1 auto;
