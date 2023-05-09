@@ -734,13 +734,13 @@ form{
     opacity: 1;
 }
 .buy {
-    background-image: url(/images/shopping-cart.svg);
+    background-image: url(../images/shopping-cart.svg);
 }
 .like{
-    background-image: url(/images/heart.svg);
+    background-image: url(../images/heart.svg);
 }
 .share{
-    background-image: url(/images/share.svg);
+    background-image: url(../images/share.svg);
 }
 .products  .hoverable li:not(.active){
     transform: translateX(100%);
