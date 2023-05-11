@@ -47,6 +47,99 @@ function dropMenu() {
     
 }
 
+//Language and currency select
+const select = document.getElementsByClassName("custom-select");
+const l = select.length;
+for (let i = 0; i < l; i++) {
+  const selElmnt = select[i].getElementsByTagName("select")[0];
+  const ll = selElmnt.length;
+  const selectBox = document.createElement("DIV");
+  selectBox.setAttribute("class", "select-selected");
+  selectBox.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  select[i].appendChild(selectBox);
+  /* create a new DIV that will contain the options */
+  const optionDiv = document.createElement("DIV");
+  optionDiv.setAttribute("class", "select-items select-hide");
+  for (let j = 1; j < ll; j++) {
+    /* For each option in the original select element, create a new DIV */
+    const option = document.createElement("DIV");
+    option.innerHTML = selElmnt.options[j].innerHTML;
+    option.addEventListener("click", function(e) {
+        /* When an item is clicked, update the original select box, and the selected item: */
+        const parentEl = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        const pl = parentEl.length;
+        const select = this.parentNode.previousSibling;
+        for (let i = 0; i < pl; i++) {
+          if (parentEl.options[i].innerHTML == this.innerHTML) {
+            parentEl.selectedIndex = i;
+            select.innerHTML = this.innerHTML;
+            const currentOption = this.parentNode.getElementsByClassName("same-as-selected");
+            const cl = currentOption.length;
+            for (let k = 0; k < cl; k++) {
+              currentOption[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        select.click();
+    });
+    optionDiv.appendChild(option);
+  }
+  select[i].appendChild(optionDiv);
+  selectBox.addEventListener("click", function(e) {
+    /* When the select box is clicked, close any other select boxes*/
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
+}
+function closeAllSelect(elmnt) {
+  /* A function that will close all select boxes in the document */
+  const arrNo = [];
+  const selectItems = document.getElementsByClassName("select-items");
+  const selectIOutput = document.getElementsByClassName("select-selected");
+  const xl = selectItems.length;
+  const yl = selectIOutput.length;
+  for (let i = 0; i < yl; i++) {
+    if (elmnt == selectIOutput[i]) {
+      arrNo.push(i)
+    } else {
+      selectIOutput[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (let i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      selectItems[i].classList.add("select-hide");
+    }
+  }
+}
+document.addEventListener("click", closeAllSelect);
+// Timer for hot offer block
+const duration = 48 * 60 * 60 * 1000;
+const startTime = Date.now();
+const endTime = startTime + duration;
+const timerElement = document.querySelector('.offer__timer');
+
+function updateTimer() {
+  //remaining time until the end
+  const remainingTime = endTime - Date.now();
+  // if the timer has ended, reload the page to start a new timer
+  if (remainingTime <= 0) {
+    location.reload();
+  }
+  // calculate the hours, minutes, and seconds remaining
+  const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(remainingTime / (60 * 60 * 1000));
+  const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
+  const seconds = Math.floor((remainingTime % (60 * 1000)) / 1000);
+  const remainingTimeStr = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  timerElement.textContent = `${remainingTimeStr}`;
+  // set a timeout to update
+  setTimeout(updateTimer, 1000);
+}
+updateTimer();
 //Slider from framework
 const swiper = new Swiper('.swiper', {
   loop: true,
@@ -64,6 +157,32 @@ widgetBtn.forEach((btn) => btn.addEventListener("click", showList));
 function showList() {
     this.nextElementSibling.classList.toggle("show");
     widgetBtn.forEach((btn) => btn != this ? btn.nextElementSibling.classList.remove("show") : null);
+}
+
+//Language and currency
+const languageItem = document.getElementById('lang'),
+  languageList = document.querySelectorAll('.language li'),
+  currencyItem = document.getElementById('currency'),
+  currencyList = document.querySelectorAll('.currency li');
+languageList.forEach((element) => element.addEventListener('click', getValue));
+currencyList.forEach((element) => element.addEventListener('click', getValue));
+
+function getValue() {
+  // if (!this.classList.contains("current")) {
+    if (this.parentElement.classList.contains("currency")) {
+      currencyList.forEach((element) => element.classList.remove("current"));
+      this.classList.add("current");
+      console.log(this);
+      currencyItem.innerHTML = this.lastChild.innerHTML;
+    } else if (this.parentElement.classList.contains("language")) {
+      languageList.forEach((element) => element.classList.remove("current"));
+      this.classList.add("current");
+      console.log(this);
+      languageItem.innerHTML = this.lastChild.innerHTML;
+    }
+  // } else {
+  //   return;
+  // }
 }
 
 // Window events
@@ -91,13 +210,12 @@ function docActions(e) {
     document.querySelector(".cart-list__products").classList.remove("active");
   };
   if (targetElement.classList.contains("cart-list__delBtn")) {
-    targetElement.classList.add("active_btn");
+    targetElement.classList.add("action-btn");
     const productId = targetElement.closest(".cart-list__item").dataset.cartPid;
     const productButton = targetElement;
     updateCart(productButton, productId, false);
     e.preventDefault();
   }
-
 }
 
 async function getProducts(button) {
@@ -253,8 +371,8 @@ function updateCart(productButton, productId, productAdd = true) {
           <div class="cart-list__image">${cartProductImage}</div>  
           <div class='cart-list__body'>
             <a class='cart-list__title'>${cartProductTitle}</a>
-            <div class="cart-list__quantity">Quantity: <span>1</span></div>
             <div class="cart-list__price">Price: <span>${cartProductPrice}</span></div>
+            <div class="cart-list__quantity">Quantity: <span>1</span></div>
             <a class="cart-list__delBtn">Delete</a>
           </div>
         `;
@@ -282,28 +400,21 @@ function updateCart(productButton, productId, productAdd = true) {
   }
 }
 
-//Cart show price
-const buyButtons = document.querySelectorAll(".buy");
-buyButtons.forEach((btn) => btn.addEventListener("click", function () {
-  // const item = this.closest('.item'),
-  // element = item.querySelector('.current'),
-  // itemPrice = element.innerHTML.slice(1);
-  // const totalSum = document.querySelector(".total-amount span");
-  // totalSum.innerHTML += itemPrice;
-  let totalPrice = 0;
-  const cart = document.querySelector(".cart-list__products").children;
-  console.log(cart);
-  for (i = 0; i < cart.length; i++){
-    let itemPrice = cart[i].children;
-    console.log(itemPrice);
-  }
-  // cart.forEach((element) => function () {
-  //   const price = element.find('.price').textContent;
-  //   totalPrice += parseFloat(price);
-  // })
+// Cart calc
+function cartCalc() {
+// Get all elements with the class "cart-list__item" and calculate the total price
+let totalPrice = 0;
+const items = document.querySelectorAll('.cart-list__item');
+for (let i = 0; i < items.length; i++) {
+  // Get the price and quantity of the current item
+  const price = parseFloat(items[i].getElementsByClassName('cart-list__price')[0].getElementsByTagName('span')[0].innerText);
+  const quantity = parseInt(items[i].getElementsByClassName('cart-list__quantity')[0].getElementsByTagName('span')[0].innerText);
 
-
-  // for (let i = 0; i < cart.length; i++) {
-  //   totalPrice += cart[i].price;
-  // }
-}));
+  // Calculate the subtotal for the current item and add it to the total price
+  const subtotal = price * quantity;
+  totalPrice += subtotal;
+}
+document.querySelector('.cart-total').innerText = totalPrice.toFixed(2);
+}
+cartCalc()
+ 

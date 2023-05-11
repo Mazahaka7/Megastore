@@ -62,26 +62,24 @@
                   <li class="header__item"><a href="#">My Account</a></li>
                   <li class="header__item"><a href="#">Order Tracking</a></li>
                   <li class="header__item">
-                    <a href="#" class="mobile-hide">USD</a>
-                    <span
-                      ><i class="ri-arrow-down-s-line mobile-hide"></i
-                    ></span>
-                    <ul class="currency">
-                      <li class="current"><a href="#">USD</a></li>
-                      <li><a href="#">EUR</a></li>
-                      <li><a href="#">UAH</a></li>
-                    </ul>
+                    <div class="custom-select mobile-hide">
+                      <select name="currency">
+                        <option value="USD" selected>USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="EUR">UAH</option>
+                        <option value="EUR">USD</option>
+                      </select>
+                    </div>
                   </li>
                   <li class="header__item">
-                    <a href="#" class="mobile-hide">English</a>
-                    <span
-                      ><i class="ri-arrow-down-s-line mobile-hide"></i
-                    ></span>
-                    <ul class="language">
-                      <li class="current"><a href="#">English</a></li>
-                      <li><a href="#">German</a></li>
-                      <li><a href="#">Ukraininan</a></li>
-                    </ul>
+                    <div class="custom-select mobile-hide">
+                      <select name="language">
+                        <option value="ENG" selected>ENG</option>
+                        <option value="">DE</option>
+                        <option value="">UKR</option>
+                        <option value="">ENG</option>
+                      </select>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -268,7 +266,7 @@
                   <li>
                     <div class="icon-text">
                       <div class="mini-text">Total</div>
-                      <div class="total-amount">$<span>0.00</span></div>
+                      <div>$<span class="cart-total">0.00</span></div>
                     </div>
                   </li>
                 </ul>
@@ -529,12 +527,7 @@
                   <article data-pid="23" class="item">
                     <div class="offer">
                       <p class="offer__heading">Offer ends at</p>
-                      <ul class="offer__list flex-center2">
-                        <li>1</li>
-                        <li>22</li>
-                        <li>33</li>
-                        <li>11</li>
-                      </ul>
+                      <p class="offer__timer"></p>
                     </div>
                     <div class="item__media">
                       <div class="item__img">
@@ -563,7 +556,7 @@
                         <h3>The best! Nike Air Max 90</h3>
                       </a>
                       <div class="price">
-                        <span class="current">$59.99</span>
+                        <span class="current">59.99</span>
                         <span class="normal mini-text">$109.00</span>
                       </div>
                       <div class="stock mini-text">
@@ -613,7 +606,7 @@
                         <h3>Cap Jordan Yellow</h3>
                       </a>
                       <div class="price">
-                        <span class="current">$20.99</span>
+                        <span class="current">20.99</span>
                         <span class="normal mini-text">$35.00</span>
                       </div>
                       <div class="stock mini-text">
@@ -650,7 +643,7 @@
                         <h3>Woman's cap Puma Dodgers</h3>
                       </a>
                       <div class="price">
-                        <span class="current">$18.99</span>
+                        <span class="current">18.99</span>
                         <span class="normal mini-text">$27.00</span>
                       </div>
                       <div class="stock mini-text">
@@ -687,7 +680,7 @@
                         <h3>Military cap Nike</h3>
                       </a>
                       <div class="price">
-                        <span class="current">$19.99</span>
+                        <span class="current">19.99</span>
                         <span class="normal mini-text">$30.00</span>
                       </div>
                       <div class="stock mini-text">
@@ -726,7 +719,7 @@
                         <h3>Men's Jordan Air1 Retro</h3>
                       </a>
                       <div class="price">
-                        <span class="current">$69.99</span>
+                        <span class="current">69.99</span>
                         <span class="normal mini-text">$139.00</span>
                       </div>
                       <div class="stock mini-text">
@@ -763,7 +756,7 @@
                         <h3>Woman's Nike Revolution 6 White</h3>
                       </a>
                       <div class="price">
-                        <span class="current">$49.99</span>
+                        <span class="current">49.99</span>
                         <span class="normal mini-text">$99.00</span>
                       </div>
                       <div class="stock mini-text">
@@ -800,7 +793,7 @@
                         <h3>Men's Nike Air Zoom Black</h3>
                       </a>
                       <div class="price">
-                        <span class="current">$59.99</span>
+                        <span class="current">59.99</span>
                         <span class="normal mini-text">$109.00</span>
                       </div>
                       <div class="stock mini-text">
@@ -859,7 +852,7 @@
                       <h3>Nike Air Max Exceen</h3>
                     </a>
                     <div class="price">
-                      <span class="current">$100.00</span>
+                      <span class="current">100.00</span>
                     </div>
                     <div class="stock mini-text">
                       <div class="quantity">
@@ -904,7 +897,7 @@
                       <h3>Nike Air Max Pulse</h3>
                     </a>
                     <div class="price">
-                      <span class="current">$150.00</span>
+                      <span class="current">150.00</span>
                     </div>
                     <div class="stock mini-text">
                       <div class="quantity">
@@ -949,7 +942,7 @@
                       <h3>Nike Air Max Alpha Trainer</h3>
                     </a>
                     <div class="price">
-                      <span class="current">$110.00</span>
+                      <span class="current">110.00</span>
                     </div>
                     <div class="stock mini-text">
                       <div class="quantity">
@@ -1091,9 +1084,6 @@
                   <ul class="flex-column">
                     <li>
                       <a href="#" onclick="return false">Your account</a>
-                    </li>
-                    <li>
-                      <a href="#" onclick="return false">Your order</a>
                     </li>
                     <li>
                       <a href="#" onclick="return false">Returns</a>
