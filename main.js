@@ -253,10 +253,8 @@ function loadProducts(data) {
 
     let template = `<article data-pid="${productId}" class="item">
                   <div class="item__media">
-                    <div class="thumbnail">
-                      <a href="#${productUrl}">
-                        <img class="item__img" src="./images/${productImage}" alt="" />
-                      </a>
+                    <div class="item__img">
+                        <img src="./images/${productImage}" alt="" />
                     </div>
                     <div class="hoverable">
                       <ul>
@@ -278,9 +276,9 @@ function loadProducts(data) {
                       <div class="stars"></div>
                       <span class="mini-text">(2,500) </span>
                     </div>
-                    <h3 class="main-links">
-                      <a href="#">${productTitle}</a>
-                    </h3>
+                      <a href="#" class="main-links">
+                        <h3>${productTitle}</h3>
+                      </a>
                     <div class="price">
                       <span class="current">$${productPrice}</span>
                     </div>

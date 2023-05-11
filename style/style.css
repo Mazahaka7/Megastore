@@ -760,13 +760,13 @@ form{
     opacity: 1;
 }
 .buy {
-    background-image: url(/images/shopping-cart.svg);
+    background-image: url(../images/shopping-cart.svg);
 }
 .like{
-    background-image: url(/images/heart.svg);
+    background-image: url(../images/heart.svg);
 }
 .share{
-    background-image: url(/images/share.svg);
+    background-image: url(../images/share.svg);
 }
 .products  .hoverable li:not(.active){
     transform: translateX(100%);
@@ -971,7 +971,6 @@ form{
 }
 .cart-list__image{
     flex: 0 0 100px;
-    height: 100px;
 }
 .cart-list__body{
     flex: 1 1 auto;
