@@ -180,9 +180,6 @@ function getValue() {
       console.log(this);
       languageItem.innerHTML = this.lastChild.innerHTML;
     }
-  // } else {
-  //   return;
-  // }
 }
 
 // Window events
@@ -199,6 +196,7 @@ function docActions(e) {
   if (targetElement.classList.contains("buy")) {
     const productId = targetElement.closest(".item").dataset.pid;
     addToCart(targetElement, productId);
+    cartCalc();
     e.preventDefault();
   };
   if (targetElement.classList.contains("iscart__icon") || targetElement.closest(".iscart")) {
@@ -214,6 +212,7 @@ function docActions(e) {
     const productId = targetElement.closest(".cart-list__item").dataset.cartPid;
     const productButton = targetElement;
     updateCart(productButton, productId, false);
+    cartCalc();+
     e.preventDefault();
   }
 }
@@ -279,8 +278,8 @@ function loadProducts(data) {
                       <a href="#" class="main-links">
                         <h3>${productTitle}</h3>
                       </a>
-                    <div class="price">
-                      <span class="current">$${productPrice}</span>
+                    <div class="price">$
+                      <span class="current">${productPrice}</span>
                     </div>
                     <div class="stock mini-text">
                       <div class="quantity">
@@ -400,19 +399,18 @@ function updateCart(productButton, productId, productAdd = true) {
 
 // Cart calc
 function cartCalc() {
-// Get all elements with the class "cart-list__item" and calculate the total price
 let totalPrice = 0;
-const items = document.querySelectorAll('.cart-list__item');
-for (let i = 0; i < items.length; i++) {
+  const items = document.querySelectorAll('.cart-list__item');
+    for (let i = 0; i < items.length; i++) {
   // Get the price and quantity of the current item
-  const price = parseFloat(items[i].getElementsByClassName('cart-list__price')[0].getElementsByTagName('span')[0].innerText);
-  const quantity = parseInt(items[i].getElementsByClassName('cart-list__quantity')[0].getElementsByTagName('span')[0].innerText);
-
+  const price = parseFloat(items[i].getElementsByClassName('cart-list__price')[0].getElementsByTagName('span')[0].textContent);
+  const quantity = parseInt(items[i].getElementsByClassName('cart-list__quantity')[0].getElementsByTagName('span')[0].textContent);
+  console.log(price);
+  console.log(quantity);
   // Calculate the subtotal for the current item and add it to the total price
   const subtotal = price * quantity;
+  console.log(subtotal);
   totalPrice += subtotal;
 }
 document.querySelector('.cart-total').innerText = totalPrice.toFixed(2);
 }
-cartCalc()
- 
