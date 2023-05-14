@@ -117,7 +117,7 @@ function closeAllSelect(elmnt) {
 }
 document.addEventListener("click", closeAllSelect);
 // Timer for hot offer block
-const duration = 48 * 60 * 60 * 1000;
+const duration = 24 * 60 * 60 * 1000;
 const startTime = Date.now();
 const endTime = startTime + duration;
 const timerElement = document.querySelector('.offer__timer');
@@ -139,6 +139,7 @@ function updateTimer() {
   // set a timeout to update
   setTimeout(updateTimer, 1000);
 }
+
 updateTimer();
 //Slider from framework
 const swiper = new Swiper('.swiper', {
@@ -168,7 +169,6 @@ languageList.forEach((element) => element.addEventListener('click', getValue));
 currencyList.forEach((element) => element.addEventListener('click', getValue));
 
 function getValue() {
-  // if (!this.classList.contains("current")) {
     if (this.parentElement.classList.contains("currency")) {
       currencyList.forEach((element) => element.classList.remove("current"));
       this.classList.add("current");
@@ -196,7 +196,6 @@ function docActions(e) {
   if (targetElement.classList.contains("buy")) {
     const productId = targetElement.closest(".item").dataset.pid;
     addToCart(targetElement, productId);
-    cartCalc();
     e.preventDefault();
   };
   if (targetElement.classList.contains("iscart__icon") || targetElement.closest(".iscart")) {
@@ -212,7 +211,7 @@ function docActions(e) {
     const productId = targetElement.closest(".cart-list__item").dataset.cartPid;
     const productButton = targetElement;
     updateCart(productButton, productId, false);
-    cartCalc();+
+    cartCalc();
     e.preventDefault();
   }
 }
@@ -243,7 +242,6 @@ function loadProducts(data) {
     const productUrl = item.url;
     const productImage = item.image;
     const productTitle = item.title;
-    const productStyle = item.style;
     const productPrice = item.price;
     const productStock = item.stock;
     const productSold = item.sold;
@@ -395,22 +393,20 @@ function updateCart(productButton, productId, productAdd = true) {
       cartList.classList.remove("active");
     }
   }
+  cartCalc();
 }
 
 // Cart calc
 function cartCalc() {
-let totalPrice = 0;
+  let totalPrice = 0;
   const items = document.querySelectorAll('.cart-list__item');
-    for (let i = 0; i < items.length; i++) {
-  // Get the price and quantity of the current item
-  const price = parseFloat(items[i].getElementsByClassName('cart-list__price')[0].getElementsByTagName('span')[0].textContent);
-  const quantity = parseInt(items[i].getElementsByClassName('cart-list__quantity')[0].getElementsByTagName('span')[0].textContent);
-  console.log(price);
-  console.log(quantity);
-  // Calculate the subtotal for the current item and add it to the total price
-  const subtotal = price * quantity;
-  console.log(subtotal);
-  totalPrice += subtotal;
-}
+  items.forEach((item) => {
+    // Get the price and quantity of the current item
+    const price = parseFloat(item.getElementsByClassName('cart-list__price')[0].getElementsByTagName('span')[0].textContent);
+    const quantity = parseInt(item.getElementsByClassName('cart-list__quantity')[0].getElementsByTagName('span')[0].textContent);
+    // Calculate the subtotal for the current item and add it to the total price
+    const subtotal = price * quantity;
+    totalPrice += subtotal;
+  });
 document.querySelector('.cart-total').innerText = totalPrice.toFixed(2);
 }

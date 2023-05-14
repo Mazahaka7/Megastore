@@ -1071,6 +1071,9 @@ form{
         width: 100%;
         max-width: 600px;
     }
+    .icon-text{
+        display: none;
+    }
 }
 @media screen and (min-width:481px){
     .products.main .item{
